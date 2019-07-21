@@ -19,6 +19,11 @@ password: string;
   ) { }
 
   ngOnInit() {
+    this.loginService.getAuth().subscribe(auth =>{
+      if(auth){
+        this.router.navigate(['/']);
+      }
+    })
   }
 
 login(){
